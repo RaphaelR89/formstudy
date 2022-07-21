@@ -3,14 +3,11 @@ import { Counter } from './features/counter/Counter';
 import './App.css';
 
 function App() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-
   const onSubmit = (e) => {
     e.preventDefault();
     const data = {
-      firstName,
-      lastName,
+      firstName: e.target.elements.firstName.value,
+      lastName: e.target.elements.lastName.value,
     };
     console.log(data);
   };
@@ -22,24 +19,14 @@ function App() {
           <div>
             <label>
               Nome: <br />
-              <input
-                type="text"
-                name="firstName"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-              />
+              <input type="text" name="firstName" />
             </label>
           </div>
           <div>
             <label htmlFor="">
               Sobrenome:
               <br />
-              <input
-                type="text"
-                name="lastName"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              />
+              <input type="text" name="lastName" />
             </label>
           </div>
           <button type="submit">Enviar</button>
