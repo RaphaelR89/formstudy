@@ -1,46 +1,13 @@
-# Getting Started with Create React App and Redux
+Estudo de formulários aonde começo utilizando o useState, submit , React Form hook e por ultimo faço um exemplo de CEP consumindo a api para receber um endereço,autocompletar,validar e também restringir localização!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+use os commits para se guiar no projeto!
 
-## Available Scripts
+form State eu demonstro como criar um formulário com base no useState! Infelizmente criar um formulário no useState nao é uma boa pratica pois a página acaba sendo atualizada a cada vez que uma tecla e acionada:
 
-In the project directory, you can run:
+    Exemplo: Seu nome tem 7 letras, a página será atualizada 7x
 
-### `npm start`
+Form modo Submit eu utilizo a forma padrão de deixar o FORM controlar a forma de envio! Usar o submit é melhor que o useState pois você não atualiza a pagina toda vez que digita porém você precisar escrever mais linhas de código ao criar a estrutura do json e a linha do código para capturar o valor.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+useForm eu utilizo o REACT FORM HOOk para gerenciar meus formulários de forma simples e rápida, ele tem todas as vantagens do modo submit porém quando você preciosa o "enviar" ele automaticamente gera um json na sua função de handleSubmit o que economiza linhas de código (você n precisa montar a estrutura que vai receber os valores!). Eu não coloquei validação para tratar errors.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+No CEP Projeto eu transformo o formulário para uma estrutura de cadastro de endereço muito utilizado nos ecommerce e alí eu consumo uma api para localizar o CEP, autocompletar com as informações retornadas da api assim que o campo de CEP deixar de ser o foco E também criei uma validação para caso o CEP não seja de belo horizonte, um alert seja acionado e os campos resetados para o estado vazio!
